@@ -10,7 +10,7 @@ export default function About(){
 
     return (
         <main>
-        <img src={image} alt="LapTop" className="absolute object-cover w-full h-full blur-img"/>
+        <img src={image} alt="LapTop" className="bg-cover bg-center absolute object-cover w-full h-full"/>
           <section className="relative flex flex-col justify-left items-center min-h-screen pt-12 lg:pt-64 px-8">
               <div className="relative flex flex-col justify-center items-center">
                 <code><h1 className="text-6xl font-bold mb-4 text-white">WELCOME</h1></code>

@@ -4,8 +4,8 @@ import CV from "../Documents/CV.pdf"
 
 export default function Home(){
     return (
-      <main>
-        <img src={image} alt="LapTop" className="absolute object-cover w-full h-full blur-img"/>
+      <main className="h-screen w-screen">
+        <img src={image} alt="Background" className="absolute object-cover w-full h-full blur-img bg-fixed"/>
           <section className="relative flex flex-col justify-left items-center min-h-screen pt-12 lg:pt-64 px-8">
               <div className="relative flex flex-col justify-center items-center">
                 <code><h1 className="text-6xl font-bold mb-4 text-white">WELCOME</h1></code>
