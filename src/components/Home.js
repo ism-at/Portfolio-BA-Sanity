@@ -18,29 +18,5 @@ export default function Home(){
         </main>
     )
   }
-  
-  
-  /* <div className="relative z-10"> */
-  
-  // import React from 'react';
-  // import cv from './Documents/CV.pdf'; // adjust the path accordingly
-  
-  // const DownloadButton = () => {
-    //   return (
-      //     <a href={cv} target="_blank" rel="noopener noreferrer">
-      //       <button>
-      //         Open CV
-      //       </button>
-      //     </a>
-      //   );
-      // };
-      // export default DownloadButton;
-      
 
-    /*----------------------------------------------------------------------------------*/
-      /* <img src={image} alt="LapTop" className="absolute object-cover w-full h-full"/> 
-      <section className="relative flex justify-center min-h-screen pt-12 lg:pt-64 px-8">
-      <h1 className="text-3xl text-red-100 
-      font-bold cursive leading-none 
-      lg:leading-snung home-name">Ismail Al Agele</h1>
-      </section>  */
+  

@@ -42,7 +42,7 @@ export default defineType({
     defineField({
       name: 'body',
       title: 'Body',
-      type: 'url',
+      type: 'blockContent', //'url'
     }),
   ],
 

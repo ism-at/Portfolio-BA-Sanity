@@ -1,25 +1,45 @@
-import React from "react";
-
+// --------- Responsive -----------------//
+import React, { useState, useEffect } from "react";
+import sanityClient from '../client.js';
 import image  from "../imgs/15.jpg";
-import CV from "../Documents/CV.pdf"
+import imageUrlBuilder  from "@sanity/image-url";
+import BlockContent from "@sanity/block-content-to-react"
 
-
-
+const builder = imageUrlBuilder(sanityClient);
+function urlFor(source){
+    return builder.image(source);
+}
 export default function About(){
-    //return <h1>About Page</h1>
+  const [author, setAuthor] = useState(null);
 
-    return (
-        <main>
-        <img src={image} alt="LapTop" className="bg-cover bg-center absolute object-cover w-full h-full"/>
-          <section className="relative flex flex-col justify-left items-center min-h-screen pt-12 lg:pt-64 px-8">
-              <div className="relative flex flex-col justify-center items-center">
-                <code><h1 className="text-6xl font-bold mb-4 text-white">WELCOME</h1></code>
-                <code><p className="text-4xl mb-8 text-white">Ismail</p></code>
-                <a href={CV} target="_blank" rel="noreferrer" className="text-white 
-                bg-blue-500 hover:bg-blue-700 transition-colors duration-300 
-                ease-in-out px-6 py-3 rounded-full font-bold">Download my CV</a>
-              </div>
-          </section>
-        </main>
-    )
+  useEffect (() =>{
+    sanityClient.fetch(`*[_type == "author"]{
+        name,
+        bio,
+        "authorImage": image.asset->url
+    }`)
+    .then((data) => setAuthor(data[0]))
+    .catch(console.error);
+  }, []);
+  if(!author) return <div>Loading...</div>;
+  return (
+    // <main className="relative min-h-screen items-center justify-center">
+    <main className="relative min-h-screen"> 
+      <img src={image} alt="gitHub" className="absolute w-full h-full object-cover"/>
+      <div className="p-4 sm:p-10 lg:pt-48 container mx-auto relative">
+        <section className="aboutMe rounded-lg shadow-2xl lg:flex p-4 sm:p-10">
+          <img src={urlFor(author.authorImage).url()} className="object-cover rounded w-32 h-32 lg:w-64 lg:h-64 mr-4 lg:mr-8" alt={author.name}/>
+          <div className="text-lg flex flex-col justify-center">
+            <h1 className="cursive text-3xl sm:text-4xl lg:text-3xl text-gray-300 mb-4">
+              Hi there... I'm{" "}
+              <span className="text-gray-300">{author.name}</span>
+            </h1>
+            <div className="prose sm:prose-lg lg:prose-xl text-white">
+              <BlockContent blocks={author.bio} projectId="b2qwd9qn" dataset="production"/>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  );
 }

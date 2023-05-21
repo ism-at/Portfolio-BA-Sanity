@@ -25,32 +25,19 @@ code {
   margin-right: auto;
   border-radius: 5px;
 }
-.home-name{
-  font-size: 150px;
-}
 .blur-img{
   filter: blur(2px);
 }
-/* body{
-  background-image: url("./imgs/01.jpg");
-  background-color: #212121;
-} */
-
-/* body{
-  background-color: rgb(15 23 42);
-}  */
-
-/* html, body {
-  height: 100%;
-  width: 100%;
-} */
-
-/* By Mobile 
-element {
-  position: fixed;
-  width: inherit;
-} */
-
-.Nav-Bar-Mobile{
-  
+.aboutMe {
+  background-color: #162c3fa3;
+  border: 0.5px solid #f3f4f7; 
+}
+@media only screen and (max-width: 767px) {
+  .mobile{
+    padding-bottom: 25px;
+    align-items: center;
+  }
+  .p{
+    width: 100%;
+  }
 }
