@@ -56,7 +56,7 @@ export default function Project(){
                             </p>
                             <a href={project.link} rel="noopener noreferrer" target="_blank" className="text-red-500 font-bold hover:underline hover:text-red-400">
                                 <span role="img" aria-label="right-label">👉</span>
-                                &#160; View The Source Code On GitHub{" "}
+                                &#160; View The Source Code On GitLab{" "}
                             </a>
                         </div>
                     </article>
