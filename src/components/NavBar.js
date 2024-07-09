@@ -124,7 +124,7 @@ export default function NavBar() {
           </nav>
           <div className="inline-flex ml-auto">
             <SocialIcon
-              url="https://github.com/ism85"
+              url="https://github.com/ism-at"
               className="mr-4"
               target="_blank"
               bgColor="#ffffff"
